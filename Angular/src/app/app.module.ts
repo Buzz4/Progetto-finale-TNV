@@ -14,6 +14,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
 import { GameComponent } from './components/game/game.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GameItemComponent } from './components/game-item/game-item.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { GameComponent } from './components/game/game.component';
     WelcomeComponent,
     ProfileComponent,
     RankingsComponent,
-    GameComponent
+    GameComponent,
+    GameItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
