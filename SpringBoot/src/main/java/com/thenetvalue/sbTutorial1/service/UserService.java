@@ -77,6 +77,10 @@ public class UserService {
             }
         }
 
+    public User register(User newUser) {
+        return userDAO.save(newUser);
+    }
+
 
 }
 

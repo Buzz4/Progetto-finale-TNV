@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/users")
 public class UserController {
     private UserService userService;
@@ -18,6 +19,10 @@ public class UserController {
         this.userService = userService;
     }
 
+    @PostMapping("/registration/")
+    public User register(@RequestBody User newUser){
+        return userService.register(newUser);
+    }
     @PostMapping("/")
     public String addUser(@RequestBody User user){
         return userService.addUser(user);

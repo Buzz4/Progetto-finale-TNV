@@ -1,4 +1,4 @@
-import Rating from "../models/rating.js";
+ import Rating from "../models/rating.js";
 
 export const getRating = async (req, res) => {
     try {

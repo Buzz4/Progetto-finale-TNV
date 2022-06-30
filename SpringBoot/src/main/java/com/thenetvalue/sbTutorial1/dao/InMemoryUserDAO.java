@@ -35,4 +35,10 @@ public class InMemoryUserDAO implements UserDAO{
         return InMemoryDatabase.deleteUser(id);
     }
 
+    @Override
+    public int register(User newUser) {
+        // TODO Auto-generated method stub
+        return InMemoryDatabase.addUser(newUser);
+    }
+
 }

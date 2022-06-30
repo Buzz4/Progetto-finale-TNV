@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.thenetvalue.sbTutorial1.model.User;
+
 import javax.sql.DataSource;
 
 @Configuration
@@ -29,7 +31,7 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
                 + "from users "
                 + "where username = ?")
                 .authoritiesByUsernameQuery("select username,authority "
-                + "from authorities "
+                + "from user "
                 + "where username = ?");
 
                 /*.withUser("LucaCara")
@@ -59,11 +61,13 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/users/*")
+                .antMatchers("*")
+                .permitAll()
+                /* .antMatchers(HttpMethod.GET, "/users/*")
                 .hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST, "/users/")
-                .hasAnyRole("ADMIN")
-                .anyRequest().authenticated()
+                .hasAnyRole("USER", "ADMIN")
+                .anyRequest().authenticated()*/
                 .and()
                 .httpBasic();
     }
