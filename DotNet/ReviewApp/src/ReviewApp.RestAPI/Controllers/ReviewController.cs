@@ -25,7 +25,7 @@ public class ReviewController : ControllerBase
         return Ok(_applicationManager.GetAllReviews());
     }
 
-    [HttpPatch]
+    [HttpPost]
     public ActionResult<ReviewContract> AddReview([FromBody] UpdateReviewContract info)
     {
         try
