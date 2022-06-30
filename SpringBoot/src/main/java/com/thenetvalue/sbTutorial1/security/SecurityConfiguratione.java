@@ -33,10 +33,9 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username,authority "
                 + "from user "
                 + "where username = ?");
-
-                /*.withUser("LucaCara")
+                /*.withUser("FrancescaLusso")
                 .password(passwordEncoder.encode("1234567"))
-                .roles("USER")
+                .roles("ADMIN")
                 .and()
                 .withUser("user")
                 .password(passwordEncoder.encode("user"))
