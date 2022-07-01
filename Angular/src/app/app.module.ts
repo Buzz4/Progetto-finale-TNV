@@ -16,6 +16,7 @@ import { RankingsComponent } from './components/rankings/rankings.component';
 import { GameComponent } from './components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameItemComponent } from './components/game-item/game-item.component';
+import { ReviewComponent } from './components/review/review.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GameItemComponent } from './components/game-item/game-item.component';
     RankingsComponent,
     GameComponent,
     GameItemComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
