@@ -9,9 +9,6 @@ const Rating = db.define('favorites', {
   },
   movieId: {
     type: DataTypes.INTEGER
-  },
-  rating: {
-    type: DataTypes.INTEGER
   }
 }, {
   freezeTableName: true

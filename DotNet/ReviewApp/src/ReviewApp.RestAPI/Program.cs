@@ -3,22 +3,22 @@ using ReviewApp.EF.BL;
 using ReviewApp.EF.BL.Service.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
-//var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // Add services to the container.
 
-/*builder.Services.AddCors(options =>
+builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: myAllowSpecificOrigins,
-                      policy  =>
+    options.AddPolicy("Policy1",
+                      builder =>
                       {
-                          policy.WithOrigins("http://localhost:4200/preferiti")
+                          builder.WithOrigins("*")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                       });
-});*/
+});
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -36,7 +36,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//app.UseCors(myAllowSpecificOrigins);
+app.UseCors("Policy1");
 
 app.UseAuthorization();
 

@@ -7,9 +7,6 @@ const Rating = db.define('ranking', {
   userId: {
     type: DataTypes.INTEGER
   },
-  movieId: {
-    type: DataTypes.INTEGER
-  },
   gamePoints: {
     type: DataTypes.INTEGER
   }
@@ -17,4 +14,4 @@ const Rating = db.define('ranking', {
   freezeTableName: true
 });
  
-export default Rating;
+export default Ranking;
