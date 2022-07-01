@@ -17,6 +17,8 @@ import { GameComponent } from './components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameItemComponent } from './components/game-item/game-item.component';
 import { ReviewComponent } from './components/review/review.component';
+import { OrderComponent } from './components/order/order.component';
+import { EndGameItemComponent } from './components/end-game-item/end-game-item.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ReviewComponent } from './components/review/review.component';
     GameComponent,
     GameItemComponent,
     ReviewComponent,
+    OrderComponent,
+    EndGameItemComponent,
   ],
   imports: [
     BrowserModule,

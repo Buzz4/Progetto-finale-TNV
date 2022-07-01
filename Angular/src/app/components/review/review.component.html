@@ -1,30 +1,9 @@
-<div class="d-flex align-items-center justify-content-center" style="height: 100vh">
-    <div class="register-card">
-        <div class="wrap d-md-flex">
-            <div class="img col-12 col-md-6"></div>
-            <div class="col-12 col-md-6 p-4 p-md-5">
-                <div class="d-flex">
-                    <div class="w-100">
-                        <h3 class="mb-4">Inserisci recensione</h3>
-                    </div>
-                </div>
-                <form #r="ngForm" (ngSubmit)="review(r)">
-                    <div class="form-group">
-                        <label class="label" for="name">Recensione</label>
-                        <input [ngModel] name="recensione" type="text" class="form-control" placeholder="Inserisci recensione" required
-                            id="recensione" #name="ngModel" />
-                        <small class="form-text text-danger">Campo obbligatorio</small>
-                    </div>
-                    <div class="form-group">
-                        <button
-                        type="submit"
-                        class="form-control btn btn-primary rounded submit px-3 mt-2"
-                        >
-                        Inserisci
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<div class="mb-3">
+    <form #r="ngForm" (ngSubmit)="review(r)">
+        <label for="exampleFormControlTextarea1" class="form-label">Inserisci recensione</label>
+        <textarea [ngModel] name="recensione" type="text" class="form-control"
+        placeholder="Inserisci recensione" required id="recensione" #name="ngModel"
+        class="form-control" rows="3"></textarea>
+        <button type="submit" class="form-control btn btn-primary rounded submit px-3 mt-2">Inserisci</button>
+    </form>
 </div>
