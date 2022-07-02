@@ -19,6 +19,8 @@ import { GameItemComponent } from './components/game-item/game-item.component';
 import { ReviewComponent } from './components/review/review.component';
 import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
 import { FavoriteMoviesItemComponent } from './components/favorite-movies-item/favorite-movies-item.component';
+import { OrderComponent } from './components/order/order.component';
+import { EndGameItemComponent } from './components/end-game-item/end-game-item.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { FavoriteMoviesItemComponent } from './components/favorite-movies-item/f
     ReviewComponent,
     FavoriteMoviesComponent,
     FavoriteMoviesItemComponent,
+    OrderComponent,
+    EndGameItemComponent,
   ],
   imports: [
     BrowserModule,

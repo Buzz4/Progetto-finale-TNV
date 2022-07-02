@@ -10,6 +10,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
 import { GameComponent } from "./components/game/game.component";
 import { ReviewComponent } from "./components/review/review.component";
+import { OrderComponent } from "./components/order/order.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: "rankings", component: RankingsComponent },
       { path: "game", component: GameComponent},
       { path: "preferiti", component: ReviewComponent},
+      { path: "order", component: OrderComponent},
       { path: "", redirectTo: "welcome", pathMatch: 'full' },
     ],
   },
