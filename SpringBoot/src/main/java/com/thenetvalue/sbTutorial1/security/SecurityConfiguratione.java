@@ -28,10 +28,10 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(this.dataSource)
                 .usersByUsernameQuery("select username,password,enabled "
-                + "from user "
+                + "from users "
                 + "where username = ?")
                 .authoritiesByUsernameQuery("select username, authority "
-                + "from user "
+                + "from authorities "
                 + "where username = ?");
                 /* .withUser(User.class.getName())
                 .password(passwordEncoder.encode("1234567"))
@@ -60,8 +60,8 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                /* .antMatchers("*")
-                .permitAll()*/
+                .antMatchers("*")
+                .permitAll()
                  
                 .antMatchers(HttpMethod.GET, "/users/*")
                 .hasAnyRole("USER", "ADMIN")

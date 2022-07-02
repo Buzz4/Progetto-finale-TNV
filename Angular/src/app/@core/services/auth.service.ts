@@ -1,7 +1,9 @@
 import { HttpClient } from "@angular/common/http";
+import { Token } from "@angular/compiler";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, of } from "rxjs";
+import { LoginComponent } from "src/app/@shared/components/login/login.component";
 import { LoginDTO, RegisterDTO, User } from "src/app/models/user";
 
 @Injectable({
@@ -11,20 +13,17 @@ export class AuthService {
   springBaseUrl : string = "http://localhost:8080/users/"
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(loginData: LoginDTO) {
+  login(token: string) {
     // TODO Chiamare il servizio per l'autenticazione e salvare l'utente corrente nel localStorage
-     return this.httpClient.post<LoginDTO>("http://localhost:8080/users/login", loginData.username, loginData.password);
+    
+      
      
-    /*const response: User = {
-      name: "",
-      surname: "Paperino",
-      username: loginData.username 
-    }
+    const response = 'auth-user'
 
     
-    localStorage.setItem("user", JSON.stringify(loginData));
+    localStorage.setItem(response, token);
 
-    return of('login ok');*/
+    return of('login ok');
   }
 
   register(registerData: Partial<RegisterDTO>) {
@@ -49,6 +48,8 @@ export class AuthService {
     return user;
   }
 
-  
+  login2(loginData: LoginDTO){
+    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`);
+  }
 
 }

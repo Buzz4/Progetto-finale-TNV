@@ -36,11 +36,11 @@ public class UserService{
         return userDAO.findByUsernameContains(username);
     }
 
-    /*public Iterable<User> getUserByUsernameAndPassword(String username, String password) {
+    public Iterable<User> getUserByUsernameAndPassword(String username, String password) {
         return userDAO.findByUsernameAndPassword(username, password);
-    }*/
+    }
 
-    public String getUserByUsernameAndPassword(String username, String password) {
+    /*public String getUserByUsernameAndPassword(String username, String password) {
         List<User> userValido = userDAO.findByUsernameAndPassword(username, password);
 
         if (userValido == null){
@@ -48,7 +48,7 @@ public class UserService{
         }else {
             return "Username e password corrette";
         }
-    }
+    }*/
 
     public Iterable<User> allUsers(){
         return userDAO.findAll();

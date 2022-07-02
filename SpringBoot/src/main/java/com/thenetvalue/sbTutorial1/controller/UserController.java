@@ -43,15 +43,15 @@ public class UserController {
         return userService.getUserByUsernameContains(username);
     }
 
-    /*@GetMapping("/username/{username}/password/{password}")
+    @GetMapping("/username/{username}/password/{password}")
     public Iterable<User> getUserByUsernameAndPassword(@PathVariable("username") String username, @PathVariable ("password") String password){
         return userService.getUserByUsernameAndPassword(username, password);
-    }*/
+    }
 
-    @GetMapping("/username/{username}/password/{password}")
+    /*@GetMapping("/username/{username}/password/{password}")
     public String getUserByUsernameAndPassword(@PathVariable("username") String username, @PathVariable ("password") String password){
         return userService.getUserByUsernameAndPassword(username, password);
-    }
+    }*/
 
    @GetMapping("/")
    public Iterable<User> allUsers(){

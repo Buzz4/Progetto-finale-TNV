@@ -8,7 +8,7 @@ import { Rating } from 'src/app/models/rating';
 })
 export class RatingService {
 
-  nodeBaseUrl: String = "http://localhost:8889/api";
+  nodeBaseUrl: String = "http://localhost:1234/api";
 
   constructor(private httpClient: HttpClient) { }
 
