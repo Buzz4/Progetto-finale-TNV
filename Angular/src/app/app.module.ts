@@ -17,7 +17,14 @@ import { GameComponent } from './components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameItemComponent } from './components/game-item/game-item.component';
 import { ReviewComponent } from './components/review/review.component';
+<<<<<<< HEAD
 import { WelcomeHeaderComponent } from './components/welcome-header/welcome-header.component';
+=======
+import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
+import { FavoriteMoviesItemComponent } from './components/favorite-movies-item/favorite-movies-item.component';
+import { OrderComponent } from './components/order/order.component';
+import { EndGameItemComponent } from './components/end-game-item/end-game-item.component';
+>>>>>>> ea2afdf0448c059c2f74f8de55dac161e2beecdc
 
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { WelcomeHeaderComponent } from './components/welcome-header/welcome-head
     GameComponent,
     GameItemComponent,
     ReviewComponent,
+<<<<<<< HEAD
     WelcomeHeaderComponent,
+=======
+    FavoriteMoviesComponent,
+    FavoriteMoviesItemComponent,
+    OrderComponent,
+    EndGameItemComponent,
+>>>>>>> ea2afdf0448c059c2f74f8de55dac161e2beecdc
   ],
   imports: [
     BrowserModule,

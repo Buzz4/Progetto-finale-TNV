@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ReviewApp.Core.BL;
 using ReviewApp.Core.BL.Service;
@@ -18,6 +19,7 @@ public class ReviewController : ControllerBase
         _applicationManager = new ApplicationManager(storageservice);
     }
 
+    [EnableCors("Policy1")]
     [HttpGet]
     public ActionResult<List<ReviewContract>> GetAllReviews()
     {
@@ -25,6 +27,7 @@ public class ReviewController : ControllerBase
         return Ok(_applicationManager.GetAllReviews());
     }
 
+    [EnableCors("Policy1")]
     [HttpPost]
     public ActionResult<ReviewContract> AddReview([FromBody] UpdateReviewContract info)
     {
@@ -104,4 +107,3 @@ public class ReviewController : ControllerBase
         }
     }
 }
-
