@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit {
     form.control.markAllAsTouched();
     if (form.valid) {
       this.authService.login(form.value).subscribe({
-        next: (response) => this.router.navigateByUrl("/"),
+        next: (res) => {
+          console.log(res);
+          this.router.navigateByUrl('/welcome');
+        },
       });
     }
   }

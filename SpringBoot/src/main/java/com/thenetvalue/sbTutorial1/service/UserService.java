@@ -9,8 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService{
     UserRepositoryDAO userDAO;
+    
 
     @Autowired
     public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
@@ -31,7 +32,7 @@ public class UserService {
         return userDAO.findById(id).get();
     }
 
-    public Iterable<User> getUserByUsernameContains(String username){
+    public User getUserByUsernameContains(String username){
         return userDAO.findByUsernameContains(username);
     }
 
@@ -81,6 +82,18 @@ public class UserService {
         return userDAO.save(newUser);
     }
 
-
+    public User userLogin(User login) {
+        String psw = login.getPassword();
+        if (login.getPassword() != null && login.getUsername() != null) {
+            User credenziali = userDAO.findByUsernameContains(login.getUsername());
+            if (credenziali.getPassword().equals(psw)) {
+                return credenziali;
+            }
+        } else {
+            return null;
+        }
+        return  null;
+    }
 }
+
 

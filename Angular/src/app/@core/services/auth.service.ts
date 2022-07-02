@@ -13,15 +13,18 @@ export class AuthService {
 
   login(loginData: LoginDTO) {
     // TODO Chiamare il servizio per l'autenticazione e salvare l'utente corrente nel localStorage
-    const response: User = {
-      name: "Paolino",
+     return this.httpClient.post<LoginDTO>("http://localhost:8080/users/login", loginData.username, loginData.password);
+     
+    /*const response: User = {
+      name: "",
       surname: "Paperino",
-      username: "paolino504"
-    };
+      username: loginData.username 
+    }
 
-    localStorage.setItem("user", JSON.stringify(response));
+    
+    localStorage.setItem("user", JSON.stringify(loginData));
 
-    return of('login ok');
+    return of('login ok');*/
   }
 
   register(registerData: Partial<RegisterDTO>) {

@@ -27,6 +27,11 @@ public class UserController {
     public String addUser(@RequestBody User user){
         return userService.addUser(user);
     }
+    
+    @PostMapping("/login")
+    public User userLogin(@RequestBody User login) {  
+            return userService.userLogin(login);
+    }
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable("id") int id){
@@ -34,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
-    public Iterable<User> getUserByUsernameContains(@PathVariable("username") String username){
+    public User getUserByUsernameContains(@PathVariable("username") String username){
         return userService.getUserByUsernameContains(username);
     }
 
