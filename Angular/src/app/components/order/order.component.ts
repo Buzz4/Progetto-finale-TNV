@@ -9,7 +9,6 @@ import { RatingService } from 'src/app/@core/services/rating.service';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  currentRate = 0;
   
   constructor(private movieService: MovieService, private ratingService: RatingService) { }
 
@@ -18,17 +17,4 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onSubmit(form: NgForm) {
-    form.control.markAllAsTouched();
-    if (form.valid) {
-      form.value['rating'] = this.currentRate;
-      this.ratingService.createRating(form.value).subscribe({
-        next: (res) => {
-          console.log(res);
-        },
-      });
-    }
-  }
-
 }

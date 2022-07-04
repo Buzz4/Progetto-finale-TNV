@@ -10,16 +10,13 @@
         <div class="card-body">
           <h5 class="card-title">{{ movie.title | titlecase }}</h5>
           <p class="card-text">
-            <tnv-review></tnv-review>
+            <button type="button" data-mdb-toggle="modal" data-mdb-target="#myModal">
+              Aggiungi ai preferiti
+            </button>
         </p>
-          <p class="card-text"><small class="text-muted">Aggiungi ai preferiti</small></p>
-          <form class="row" #r="ngForm" (ngSubmit)="onSubmit(r)">
-            <div class="mb-3 col-12">
-              <label for="rating" class="form-label">Voto</label><br>
-              <ngb-rating [(rate)]="currentRate" id="rating" [max]="5"></ngb-rating>
-              <button type="submit" class="form-label btn btn-primary rounded submit px-3 mt-2">Inserisci</button>
-            </div>
-          </form>
+          <p class="card-text">
+            <tnv-review></tnv-review>
+          </p>
         </div>
       </div>
     </div>

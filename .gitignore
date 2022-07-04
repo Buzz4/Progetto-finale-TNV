@@ -1,2 +1,4 @@
 # OS
 .DS_Store
+DotNet/ReviewApp/src/ReviewApp.EF/BL/ApplicationDbContext.cs
+Node/app/config/config.js
