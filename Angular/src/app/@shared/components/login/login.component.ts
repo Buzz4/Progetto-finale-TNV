@@ -18,13 +18,19 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
+
     form.control.markAllAsTouched();
     if (form.valid) {
       this.authService.login(form.value).subscribe({
         next: (res) => {
           console.log(res);
+          this.authService.saveUser(res);
           this.router.navigateByUrl('/welcome');
         },
+        error: () => {
+          let loginErrorMessage = document.getElementsByClassName('login-message');
+          loginErrorMessage[0].textContent = "Login Failed!!!";
+      }
       });
     }
   }

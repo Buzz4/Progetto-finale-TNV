@@ -18,14 +18,20 @@ export class AuthService {
     return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`);
       
      
-    const response: User = {
+    /*const response: User = {
       name: "Paolino",
       surname: "Paperino",
       username: "paolino504"
     };
 
     
-    localStorage.setItem(response);
+    localStorage.setItem("user", loginData.username);
+
+    return of('login ok');*/
+  }
+
+  saveUser(loginData: LoginDTO){
+    localStorage.setItem("user", JSON.stringify(loginData));
 
     return of('login ok');
   }
@@ -50,10 +56,6 @@ export class AuthService {
   getCurrentUser() {
     const user = JSON.parse(localStorage.getItem("user") || '') as User;
     return user;
-  }
-
-  login2(loginData: LoginDTO){
-    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`);
   }
 
 }
