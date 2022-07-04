@@ -13,10 +13,13 @@
             <tnv-review></tnv-review>
         </p>
           <p class="card-text"><small class="text-muted">Aggiungi ai preferiti</small></p>
-          <div class="mb-3 col-12">
-            <label for="rating" class="form-label">* Voto</label><br>
-            <ngb-rating [(rate)]="currentRate" id="rating" [max]="5"></ngb-rating>
-          </div>
+          <form class="row" #r="ngForm" (ngSubmit)="onSubmit(r)">
+            <div class="mb-3 col-12">
+              <label for="rating" class="form-label">Voto</label><br>
+              <ngb-rating [(rate)]="currentRate" id="rating" [max]="5"></ngb-rating>
+              <button type="submit" class="form-label btn btn-primary rounded submit px-3 mt-2">Inserisci</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

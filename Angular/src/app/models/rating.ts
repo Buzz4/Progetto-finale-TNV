@@ -1,3 +1,6 @@
-export interface Rating{
+export interface Rating{   
+    id: number,
+    userId: number,
+    movieId: number,
     rating: number
 }

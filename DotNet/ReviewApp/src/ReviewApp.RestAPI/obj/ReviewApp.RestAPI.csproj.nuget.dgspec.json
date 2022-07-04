@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj": {}
+    "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj": {}
   },
   "projects": {
-    "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj": {
+    "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj",
         "projectName": "ReviewApp.Core",
-        "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj",
-        "packagesPath": "/Users/francesca/.nuget/packages/",
-        "outputPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/obj/",
+        "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj",
+        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/francesca/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,34 +54,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj": {
+    "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\ReviewApp.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj",
+        "projectUniqueName": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\ReviewApp.EF.csproj",
         "projectName": "ReviewApp.EF",
-        "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj",
-        "packagesPath": "/Users/francesca/.nuget/packages/",
-        "outputPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/obj/",
+        "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\ReviewApp.EF.csproj",
+        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/francesca/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj": {
-                "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj"
+              "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj": {
+                "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj"
               }
             }
           }
@@ -124,37 +128,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj": {
+    "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj",
+        "projectUniqueName": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj",
         "projectName": "ReviewApp.RestAPI",
-        "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj",
-        "packagesPath": "/Users/francesca/.nuget/packages/",
-        "outputPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.RestAPI/obj/",
+        "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj",
+        "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.RestAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/francesca/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj": {
-                "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj"
+              "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj": {
+                "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.Core\\ReviewApp.Core.csproj"
               },
-              "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj": {
-                "projectPath": "/Users/francesca/Desktop/ProgettoCorretto/ProgettoCorretto/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj"
+              "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\ReviewApp.EF.csproj": {
+                "projectPath": "C:\\Users\\alexb\\desktop\\ProgettoProva\\ProgettoCorretto\\DotNet\\ReviewApp\\src\\ReviewApp.EF\\ReviewApp.EF.csproj"
               }
             }
           }
@@ -196,7 +202,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
