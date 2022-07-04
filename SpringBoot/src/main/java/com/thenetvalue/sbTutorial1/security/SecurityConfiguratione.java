@@ -28,7 +28,7 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(this.dataSource)
                 .usersByUsernameQuery("select username,password,enabled "
-                + "from users "
+                + "from user "
                 + "where username = ?")
                 .authoritiesByUsernameQuery("select username, authority "
                 + "from authorities "
@@ -63,11 +63,11 @@ public class SecurityConfiguratione extends WebSecurityConfigurerAdapter {
                 .antMatchers("*")
                 .permitAll()
                  
-                .antMatchers(HttpMethod.GET, "/users/*")
+                /* .antMatchers(HttpMethod.GET, "/users/*")
                 .hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST, "/users/*")
                 .hasAnyRole("USER", "ADMIN")
-                .anyRequest().authenticated()
+                .anyRequest().authenticated()*/
                 .and() 
                 .httpBasic();
     }

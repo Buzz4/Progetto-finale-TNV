@@ -13,15 +13,19 @@ export class AuthService {
   springBaseUrl : string = "http://localhost:8080/users/"
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(token: string) {
+  login(loginData: LoginDTO) {
     // TODO Chiamare il servizio per l'autenticazione e salvare l'utente corrente nel localStorage
-    
+    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`);
       
      
-    const response = 'auth-user'
+    const response: User = {
+      name: "Paolino",
+      surname: "Paperino",
+      username: "paolino504"
+    };
 
     
-    localStorage.setItem(response, token);
+    localStorage.setItem(response);
 
     return of('login ok');
   }
