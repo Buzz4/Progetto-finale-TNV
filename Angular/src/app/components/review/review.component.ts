@@ -12,9 +12,7 @@ import { ReviewService } from 'src/app/@core/services/review.service';
 
 export class ReviewComponent implements OnInit {
 
-  currentRate = 0;
-
-  constructor(private reviewService: ReviewService, private ratingService: RatingService, private router: Router) { }
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit(): void {
   }
@@ -27,14 +25,6 @@ export class ReviewComponent implements OnInit {
         console.log(res);
       },
     });
-    if (form.valid) {
-      form.value['rating'] = this.currentRate;
-      this.ratingService.createRating(form.value).subscribe({
-        next: (res) => {
-          console.log(res);
-      },
-    });
-    }
     }
   }
 }

@@ -1,11 +1,9 @@
 <div class="mb-3">
-    <form #r="ngForm" (ngSubmit)="onSubmit(r)">
+    <form #addreview="ngForm" (ngSubmit)="onSubmit(addreview)">
         <label for="exampleFormControlTextarea1" class="form-label">Inserisci recensione</label>
         <textarea [ngModel] name="recensione" type="text" class="form-control"
         placeholder="Inserisci recensione" required id="recensione" #name="ngModel"
         class="form-control" rows="3"></textarea>
-          <label for="rating" class="form-label">Voto</label><br>
-          <ngb-rating [(rate)]="currentRate" id="rating" [max]="5"></ngb-rating>
-          <button type="submit" *ngIf="onSubmit" class="form-label btn btn-primary rounded submit px-3 mt-2">Salva</button>
+        <button type="submit" *ngIf="onSubmit" class="form-label btn btn-primary rounded submit px-3 mt-2">Inserisci</button>
       </form>
 </div>
