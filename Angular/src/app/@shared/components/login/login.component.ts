@@ -24,14 +24,10 @@ export class LoginComponent implements OnInit {
       this.authService.login(form.value).subscribe({
         next: (res) => {
           console.log(res);
-          this.authService.saveUser(res);
+          //this.authService.saveUserInLocalStorage(res);
           this.router.navigateByUrl('/welcome');
-        },
-        error: () => {
-          let loginErrorMessage = document.getElementsByClassName('login-message');
-          loginErrorMessage[0].textContent = "Login Failed!!!";
-      }
-      });
+        }
+      })
     }
   }
 }

@@ -83,14 +83,15 @@ public class UserService{
     }
 
     public User userLogin(User login) {
+        String username = login.getUsername();
         String psw = login.getPassword();
         if (login.getPassword() != null && login.getUsername() != null) {
             User credenziali = userDAO.findByUsernameContains(login.getUsername());
-            if (credenziali.getPassword().equals(psw)) {
+            if (credenziali.getPassword().equals(psw) && credenziali.getUsername().equals(username)) {
                 return credenziali;
             }
         } else {
-            return null;
+            System.out.println("Utente inesistente");
         }
         return  null;
     }

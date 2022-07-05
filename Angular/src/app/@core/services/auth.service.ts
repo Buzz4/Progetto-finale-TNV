@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Token } from "@angular/compiler";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
@@ -15,7 +15,22 @@ export class AuthService {
 
   login(loginData: LoginDTO) {
     // TODO Chiamare il servizio per l'autenticazione e salvare l'utente corrente nel localStorage
-    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':'Basic' + btoa(loginData.username + ":" + loginData.password)
+      })
+    }
+    const response: User = {
+      name: "Paolino",
+      surname: "Paperino",
+      username: "paolino504"
+    };
+
+    localStorage.setItem("user", JSON.stringify(response));
+
+    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`, httpOptions);
       
      
     /*const response: User = {
@@ -30,7 +45,14 @@ export class AuthService {
     return of('login ok');*/
   }
 
-  saveUser(loginData: LoginDTO){
+  saveUserInLocalStorage(loginData: LoginDTO){
+
+    /*const response: User = {
+      name: "Paolino",
+      surname: "Paperino",
+      username: "paolino504"
+    }*/
+
     localStorage.setItem("user", JSON.stringify(loginData));
 
     return of('login ok');
