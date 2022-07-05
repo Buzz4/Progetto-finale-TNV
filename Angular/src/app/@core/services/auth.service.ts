@@ -22,15 +22,13 @@ export class AuthService {
         'Authorization':'Basic' + btoa(loginData.username + ":" + loginData.password)
       })
     }
-    const response: User = {
+    /*const response: User = {
       name: "Paolino",
       surname: "Paperino",
       username: "paolino504"
-    };
+    };*/
 
-    localStorage.setItem("user", JSON.stringify(response));
-
-    return this.httpClient.get<LoginDTO>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`, httpOptions);
+    return this.httpClient.get<Partial<LoginDTO>>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`, httpOptions);
       
      
     /*const response: User = {
@@ -45,16 +43,9 @@ export class AuthService {
     return of('login ok');*/
   }
 
-  saveUserInLocalStorage(loginData: LoginDTO){
-
-    /*const response: User = {
-      name: "Paolino",
-      surname: "Paperino",
-      username: "paolino504"
-    }*/
+  saveUserInLocalStorage(loginData: Partial<LoginDTO>){
 
     localStorage.setItem("user", JSON.stringify(loginData));
-
     return of('login ok');
   }
 
@@ -62,8 +53,6 @@ export class AuthService {
     // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
         return this.httpClient.post<RegisterDTO>("http://localhost:8080/users/registration/", registerData);
         //this.router.navigateByUrl("/");
-
-
        }
        
 
