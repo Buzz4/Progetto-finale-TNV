@@ -13,15 +13,16 @@ import { NavbarComponent } from './@shared/components/navbar/navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
-import { GameComponent } from './components/game/game.component';
+import { GameComponent } from './components/game-components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GameItemComponent } from './components/game-item/game-item.component';
+import { GameItemComponent } from './components/game-components/game-item/game-item.component';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeHeaderComponent } from './components/welcome-header/welcome-header.component';
 import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
 import { FavoriteMoviesItemComponent } from './components/favorite-movies-item/favorite-movies-item.component';
-import { OrderComponent } from './components/order/order.component';
-import { EndGameItemComponent } from './components/end-game-item/end-game-item.component';
+import { EndGameItemComponent } from './components/game-components/end-game-item/end-game-item.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { EndGameComponent } from './components/game-components/end-game/end-game.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,9 @@ import { EndGameItemComponent } from './components/end-game-item/end-game-item.c
     WelcomeHeaderComponent,
     FavoriteMoviesComponent,
     FavoriteMoviesItemComponent,
-    OrderComponent,
     EndGameItemComponent,
+    RatingsComponent,
+    EndGameComponent,
   ],
   imports: [
     BrowserModule,

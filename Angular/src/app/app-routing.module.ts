@@ -8,9 +8,9 @@ import { RegisterComponent } from "./@shared/components/register/register.compon
 import { WelcomeComponent } from "./components/welcome/welcome.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
-import { GameComponent } from "./components/game/game.component";
+import { GameComponent } from "./components/game-components/game/game.component";
 import { ReviewComponent } from "./components/review/review.component";
-import { OrderComponent } from "./components/order/order.component";
+import { EndGameComponent } from "./components/game-components/end-game/end-game.component";
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: "rankings", component: RankingsComponent },
       { path: "game", component: GameComponent},
       { path: "preferiti", component: ReviewComponent},
-      { path: "order", component: OrderComponent},
+      { path: "endgame", component: EndGameComponent},
       { path: "", redirectTo: "welcome", pathMatch: 'full' },
     ],
   },
