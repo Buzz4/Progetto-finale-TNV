@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-
     form.control.markAllAsTouched();
     if (form.valid) {
       this.authService.login(form.value).subscribe({

@@ -21,12 +21,6 @@ public class UserController {
     }
 
     //CRUD operations (Create Read Update Delete)
-
-    @PostMapping("/register/}")
-    public User register(@RequestBody User newUser){
-        return userService.register(newUser);
-    }
-
    
     @PostMapping("/")
     public ResponseEntity<User> addUser(@RequestBody User user) {

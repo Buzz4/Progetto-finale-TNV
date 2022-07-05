@@ -15,32 +15,15 @@ export class AuthService {
 
   login(loginData: LoginDTO) {
     // TODO Chiamare il servizio per l'autenticazione e salvare l'utente corrente nel localStorage
-
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':'application/json',
-        'Authorization':'Basic' + btoa(loginData.username + ":" + loginData.password)
-      })
-    }
-    /*const response: User = {
-      name: "Paolino",
-      surname: "Paperino",
-      username: "paolino504"
-    };*/
-
-    return this.httpClient.get<Partial<LoginDTO>>(`http://localhost:8080/users/username/${loginData.username}/password/${loginData.password}`, httpOptions);
-      
-     
-    /*const response: User = {
-      name: "Paolino",
-      surname: "Paperino",
-      username: "paolino504"
-    };
-
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa(loginData.username+":"+loginData.password)
+        })
+      };
     
-    localStorage.setItem("user", loginData.username);
-
-    return of('login ok');*/
+    return this.httpClient.get<Partial<LoginDTO>>(`${this.springBaseUrl}username/${loginData.username}/password/${loginData.password}`, httpOptions);
+    //return of('login ok');
   }
 
   saveUserInLocalStorage(loginData: Partial<LoginDTO>){
@@ -51,7 +34,7 @@ export class AuthService {
 
   register(registerData: Partial<RegisterDTO>) {
     // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
-        return this.httpClient.post<RegisterDTO>("http://localhost:8080/users/registration/", registerData);
+        return this.httpClient.post<RegisterDTO>(`${this.springBaseUrl}`, registerData);
         //this.router.navigateByUrl("/");
        }
        
