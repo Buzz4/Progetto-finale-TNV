@@ -15,6 +15,8 @@ namespace ReviewApp.EF.Mapper
             return new()
             {
                 Id = reviewEntity.Id,
+                UserId = reviewEntity.UserId,
+                MovieId = reviewEntity.MovieId,
                 Recensione = reviewEntity.Recensione
             };
         }

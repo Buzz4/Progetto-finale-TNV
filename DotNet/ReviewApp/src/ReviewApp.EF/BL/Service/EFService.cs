@@ -24,11 +24,13 @@ namespace ReviewApp.EF.BL.Service
 
         public ReviewEntity GetReviewById(int id) => _context.Reviews.Find(id);
 
-        public void AddReview(int id, string recensione)
+        public void AddReview(int id, int userId, int movieId, string recensione)
         {
             var reviewToAdd = new ReviewEntity()
             {
                 Id = id,
+                UserId = userId,
+                MovieId = movieId,
                 Recensione = recensione
             };
 

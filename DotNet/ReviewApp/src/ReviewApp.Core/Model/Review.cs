@@ -18,8 +18,11 @@ namespace ReviewApp.Core.Model
                 return _id;
             }
         }*/
-
+        public int UserId { get; set; }
+        public int MovieId { get; set; }
         public string Recensione { get; set; }
+
+
         public Review(int id, string recensione)
         {
             Id = id;

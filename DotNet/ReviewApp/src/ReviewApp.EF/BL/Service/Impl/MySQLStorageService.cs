@@ -38,7 +38,7 @@ namespace ReviewApp.EF.BL.Service.Impl
             return ReviewMapper.From(reviewById);
         }
 
-        public Review AddReview(string recensione)
+        public Review AddReview(int userId, int movieId, string recensione)
         {
             ReviewEntity reviewToAdd = new ReviewEntity()
             {
