@@ -10,10 +10,11 @@
         <div class="card-body">
           <h5 class="card-title">{{ movie.title | titlecase }}</h5>
           <p class="card-text">
-            <button type="button" data-mdb-toggle="modal" data-mdb-target="#myModal">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <button type="submit" *ngIf="onSubmit"class="form-label btn btn-primary rounded submit px-3 mt-2">
               Aggiungi ai preferiti
             </button>
-        </p>
+          </form>
           <p class="card-text">
             <tnv-review></tnv-review>
           </p>

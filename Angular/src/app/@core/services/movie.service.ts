@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
-import { Movie } from 'src/app/models/movie';
+import { FavoriteMovies, Movie } from 'src/app/models/movie';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
+
+  dotnetBaseUrl : string = "https://localhost:7024/api/review"
+  nodeBaseUrl: String = "http://localhost:1234/api";
 
   movies: Partial<Movie>[] = [];
 
@@ -37,4 +40,9 @@ export class MovieService {
         },
       });
 }
+
+createFavorite(movie: FavoriteMovies){
+  return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
+}
+
 }

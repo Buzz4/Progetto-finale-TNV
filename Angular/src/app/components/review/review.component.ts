@@ -18,23 +18,23 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-    onSubmit(form: NgForm) {
-      form.control.markAllAsTouched();
-      if(form.valid){
-        this.reviewService.addReview(form.value).subscribe({
+  
+  onSubmit(form: NgForm) {
+    form.control.markAllAsTouched();
+    if(form.valid){
+      this.reviewService.addReview(form.value).subscribe({
+        next: (res) => {
+        console.log(res);
+      },
+    });
+    if (form.valid) {
+      form.value['rating'] = this.currentRate;
+      this.ratingService.createRating(form.value).subscribe({
         next: (res) => {
           console.log(res);
-        },
-      });
-      if (form.valid) {
-        form.value['rating'] = this.currentRate;
-        this.ratingService.createRating(form.value).subscribe({
-          next: (res) => {
-            console.log(res);
-          },
-        });
-      }
+      },
+    });
+    }
     }
   }
 }

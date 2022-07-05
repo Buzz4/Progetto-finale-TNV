@@ -3,7 +3,7 @@ import db from "../../config/config.js";
  
 const { DataTypes } = Sequelize;
 
-const Rating = db.define('favorites', {
+const FavoriteMovies = db.define('favorites', {
   userId: {
     type: DataTypes.INTEGER
   },
