@@ -1,4 +1,5 @@
 export interface Review{
-    movieId: number,
-    review: string
+    userId: number | undefined,
+    movieId: number | undefined,
+    recensione: string
 }

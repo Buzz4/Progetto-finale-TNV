@@ -59,6 +59,6 @@ export interface MovieGame {
 }
 
 export interface FavoriteMovies {
-  userId: number,
-  movieId: number,
+  userId: number | undefined,
+  movieId: number | undefined,
 }

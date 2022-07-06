@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { Router } from '@angular/router';
-import { RatingService } from 'src/app/@core/services/rating.service';
+import { AuthService } from 'src/app/@core/services/auth.service';
 import { ReviewService } from 'src/app/@core/services/review.service';
+import { Movie } from 'src/app/models/movie';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'tnv-review',
@@ -12,19 +13,20 @@ import { ReviewService } from 'src/app/@core/services/review.service';
 
 export class ReviewComponent implements OnInit {
 
-  constructor(private reviewService: ReviewService) { }
+  constructor(private reviewService: ReviewService, private authService: AuthService) { }
+
+  @Input() movie: Partial<Movie> = {};
+  @Input() currentUser: Partial<User> = {};
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser();
   }
   
   onSubmit(form: NgForm) {
-    form.control.markAllAsTouched();
-    if(form.valid){
-      this.reviewService.addReview(form.value).subscribe({
-        next: (res) => {
-        console.log(res);
+    this.reviewService.addReview({userId: this.currentUser.id, movieId : this.movie.id, recensione: JSON.stringify(form.value)}).subscribe({
+      next: (res) => {
+        console.log(res)
       },
     });
-    }
   }
 }
