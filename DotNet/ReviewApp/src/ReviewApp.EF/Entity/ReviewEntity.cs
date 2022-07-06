@@ -14,13 +14,13 @@ namespace ReviewApp.EF.Entity
         [Column("id"), Key]
         public int Id { get; set; }
 
-        [Column("userid"), Required]
-        public int UserId { get; set; }
+        [Column("userId"), Required]
+        public int userId { get; set; }
         
-        [Column("movieid"), Required]
-        public int MovieId { get; set; }
+        [Column("movieId"), Required]
+        public int movieId { get; set; }
 
         [Column("recensione"), Required, StringLength(500), DataType(DataType.Text)]
-        public string Recensione { get; set; }
+        public string recensione { get; set; }
     }
 }

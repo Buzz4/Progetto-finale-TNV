@@ -29,9 +29,9 @@ namespace ReviewApp.EF.BL.Service
             var reviewToAdd = new ReviewEntity()
             {
                 Id = id,
-                UserId = userId,
-                MovieId = movieId,
-                Recensione = recensione
+                userId = userId,
+                movieId = movieId,
+                recensione = recensione
             };
 
             _context.Add(reviewToAdd);
@@ -43,7 +43,7 @@ namespace ReviewApp.EF.BL.Service
             var reviewToUpdate = GetReviewById(id);
 
             reviewToUpdate.Id = id;
-            reviewToUpdate.Recensione = recensione;
+            reviewToUpdate.recensione = recensione;
 
             _context.SaveChanges();
         }

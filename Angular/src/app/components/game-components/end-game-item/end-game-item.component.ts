@@ -14,7 +14,7 @@ import { User } from 'src/app/models/user';
 export class EndGameItemComponent implements OnInit {
   
   @Input() movie: Partial<Movie> = {};
-  @Input() favoriteMovie : Partial<FavoriteMovies> = {};
+  favoriteMovie : Partial<FavoriteMovies> = {};
 
   currentUser: Partial<User> = {};
 

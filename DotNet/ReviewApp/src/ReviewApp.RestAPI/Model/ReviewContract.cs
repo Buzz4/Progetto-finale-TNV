@@ -3,8 +3,8 @@
     public class ReviewContract
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public int MovieId { get; set; }
-        public string Recensione { get; set; }
+        public int userId { get; set; }
+        public int movieId { get; set; }
+        public string recensione { get; set; }
     }
 }
