@@ -34,6 +34,25 @@ export const createFavorite = async (req, res) => {
     }
 }
 
+export const getFavoriteByUserId = async (req, res) => {
+    try {
+        const favorite = await FavoriteMovies.findAll({
+            where: {
+                userId: req.params.userId,
+            }
+        });
+        
+        if (favorite) {
+            res.send(favorite);
+        } else {
+            res.sendStatus(404);
+        }
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+}
+
 /*export const updateRating = async (req, res) => {
     try {
         const rating = await Rating.update(req.body, {

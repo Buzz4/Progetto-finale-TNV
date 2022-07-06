@@ -14,6 +14,7 @@ export class GameItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    }
+    
+  }
 
 }

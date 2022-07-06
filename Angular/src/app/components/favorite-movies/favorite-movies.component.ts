@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie';
+import { FavoriteMovies, Movie } from 'src/app/models/movie';
 import { Input } from '@angular/core';
 import { MovieService } from 'src/app/@core/services/movie.service';
+import { AuthService } from 'src/app/@core/services/auth.service';
+import { User } from 'src/app/models/user';
+import { getCurrencySymbol } from '@angular/common';
 
 @Component({
   selector: 'tnv-favorite-movies',
@@ -10,15 +13,18 @@ import { MovieService } from 'src/app/@core/services/movie.service';
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-  @Input() movie: Partial<Movie> = {};
+  @Input() favoriteMovie: Partial<FavoriteMovies> [] = [];
 
   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 
-  constructor(private movieService: MovieService) { }
+  currentUser: Partial<User> = {};
 
-  movies = this.movieService.movies;
+  constructor(private movieService: MovieService, private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser();
   }
+
+  //favoriteMovieByUser = this.movieService.getFavoriteByUserId();
 
 }

@@ -45,4 +45,8 @@ createFavorite(movie: FavoriteMovies){
   return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
 }
 
+getFavoriteByUserId(userId: number){
+  return this.httpClient.get<FavoriteMovies>(`${this.nodeBaseUrl}/favorite/:${userId}`);
+}
+
 }
