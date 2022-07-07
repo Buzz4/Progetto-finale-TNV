@@ -74,7 +74,8 @@ export const deleteFavorite = async (req, res) => {
     try {
         await FavoriteMovies.destroy({
             where: {
-                id: req.params.id
+                userId:req.params.userId,
+                movieId: req.params.movieId
             }
         });
         res.json({

@@ -7,6 +7,11 @@
       <h5 class="card-title">
         {{ movie.title | titlecase }}
       </h5>
-      <p class="card-text"></p>
+      <p class="card-text">
+        <form #deleteMovieFavorite="ngForm" (ngSubmit)="onSubmit(deleteMovieFavorite)">
+          <button type="submit" *ngIf="onSubmit"class="form-label btn btn-primary rounded submit px-3 mt-2">
+            Elimina
+          </button>
+        </form>
     </div>
   </div>

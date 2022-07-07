@@ -46,13 +46,16 @@ getMovie(movieId: number | undefined) {
   return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movieId}?${this.APIKey}&language=it-it`);
 }
 
+getFavoriteByUserId(userId: number | undefined){
+  return this.httpClient.get<FavoriteMovies[]>(`${this.nodeBaseUrl}/favorite/${userId}`);
+}
 
 createFavorite(movie: FavoriteMovies){
   return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
 }
 
-getFavoriteByUserId(userId: number | undefined){
-  return this.httpClient.get<FavoriteMovies[]>(`${this.nodeBaseUrl}/favorite/${userId}`);
+deleteFavorite(userId: number | undefined, movieId: number | undefined){
+  return this.httpClient.delete<FavoriteMovies>(`${this.nodeBaseUrl}/favorite/${userId}/${movieId}`); 
 }
 
 }
