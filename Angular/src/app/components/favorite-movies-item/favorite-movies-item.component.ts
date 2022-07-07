@@ -5,7 +5,6 @@ import { MovieService } from 'src/app/@core/services/movie.service';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/@core/services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'tnv-favorite-movies-item',

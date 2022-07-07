@@ -4,7 +4,6 @@ import { Input } from '@angular/core';
 import { MovieService } from 'src/app/@core/services/movie.service';
 import { AuthService } from 'src/app/@core/services/auth.service';
 import { User } from 'src/app/models/user';
-import { getCurrencySymbol } from '@angular/common';
 
 @Component({
   selector: 'tnv-favorite-movies',
@@ -17,9 +16,6 @@ export class FavoriteMoviesComponent implements OnInit {
   
   movieUserIdList: Partial<FavoriteMovies> [] = [];
   movieList: Partial<Movie>[] = [];
-
-  imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
-
   currentUser: Partial<User> = {};
 
   constructor(private movieService: MovieService, private authService:AuthService) { }

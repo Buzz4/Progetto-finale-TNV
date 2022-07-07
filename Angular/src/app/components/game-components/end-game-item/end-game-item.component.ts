@@ -3,7 +3,7 @@ import { Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/@core/services/auth.service';
 import { MovieService } from 'src/app/@core/services/movie.service';
-import { FavoriteMovies, Movie } from 'src/app/models/movie';
+import { Movie } from 'src/app/models/movie';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -14,9 +14,9 @@ import { User } from 'src/app/models/user';
 export class EndGameItemComponent implements OnInit {
   
   @Input() movie: Partial<Movie> = {};
-  favoriteMovie : Partial<FavoriteMovies> = {};
-
   currentUser: Partial<User> = {};
+
+  imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 
   constructor(private movieService: MovieService, private authService: AuthService) { }
 
