@@ -13,8 +13,10 @@ import { getCurrencySymbol } from '@angular/common';
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-  @Input() movieUserIdList: Partial<FavoriteMovies> [] = [];
-  @Input() movieList: Partial<Movie>[] = [];
+  @Input() movie: Partial<Movie> = {};
+  
+  movieUserIdList: Partial<FavoriteMovies> [] = [];
+  movieList: Partial<Movie>[] = [];
 
   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 
@@ -24,8 +26,25 @@ export class FavoriteMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUser();
+    this.getAllFavorite();
   }
 
-  //favoriteMovieByUser = this.movieService.getFavoriteByUserId();
+  getAllFavorite(){
+    const userId = this.currentUser.id;
+    this.movieService.getFavoriteByUserId(userId).subscribe({
+      next: (res: FavoriteMovies[]) => {
+        this.movieUserIdList = res;
+        console.log(this.movieUserIdList);
 
+        for(let i = 0; i < this.movieUserIdList.length; i++) {
+          let movieId = this.movieUserIdList[i].movieId
+          this.movieService.getMovie(movieId).subscribe({
+            next: (res) => {
+              this.movieList[i] = res;
+              console.log(res);
+            }})
+          }   
+        }
+      });
+    }
 }

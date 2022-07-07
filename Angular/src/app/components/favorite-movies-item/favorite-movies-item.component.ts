@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteMovies, Movie } from 'src/app/models/movie';
 import { Input } from '@angular/core';
+import { MovieService } from 'src/app/@core/services/movie.service';
 
 @Component({
   selector: 'tnv-favorite-movies-item',
@@ -9,9 +10,9 @@ import { Input } from '@angular/core';
 })
 export class FavoriteMoviesItemComponent implements OnInit {
 
-  @Input() movie: Partial<Movie> = {};
   @Input() movieUserIdList: Partial<FavoriteMovies> [] = [];
   @Input() movieList: Partial<Movie>[] = [];
+  @Input() movie: Partial<Movie> = {};
 
   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 

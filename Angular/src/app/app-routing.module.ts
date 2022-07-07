@@ -22,7 +22,6 @@ const routes: Routes = [
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },
       { path: "game", component: GameComponent},
-      { path: "preferiti", component: ReviewComponent},
       { path: "endgame", component: EndGameComponent},
       { path: "", redirectTo: "welcome", pathMatch: 'full' },
     ],
