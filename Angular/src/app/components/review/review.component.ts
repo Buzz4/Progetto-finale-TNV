@@ -21,7 +21,6 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUser();
-    console.log(this.favoriteMovie.movieId);
   }
   
   onSubmit(form: NgForm) {
