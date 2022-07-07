@@ -10,6 +10,8 @@ export class WelcomeHeaderComponent implements OnInit {
   @Input() title: string = '';
   @Input() description: string = '';
 
+  
+
   constructor() { }
 
   ngOnInit(): void {
