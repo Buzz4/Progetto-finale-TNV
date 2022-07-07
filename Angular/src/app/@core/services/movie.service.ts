@@ -9,6 +9,7 @@ export class MovieService {
 
   dotnetBaseUrl : string = "https://localhost:7024/api/review"
   nodeBaseUrl: String = "http://localhost:1234/api";
+  APIKey : string = "api_key=0f19618cdb7bc8cd3529c739a1455e1a"
 
   movies: Partial<Movie>[] = [];
 
@@ -21,7 +22,7 @@ export class MovieService {
     
       this.httpClient
       .get(
-        `https://api.themoviedb.org/3/movie/${randomId}?api_key=3949444e64e7a9355250d3b1b5c59bf1&language=it-it`
+        `https://api.themoviedb.org/3/movie/${randomId}?${this.APIKey}&language=it-it`
       )
       .subscribe({
         // Qui non usate any ovviamente, ma create l'interfaccia typescript per la response
@@ -41,12 +42,17 @@ export class MovieService {
       });
 }
 
+getMovie(movieId: number | undefined) {
+  return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movieId}?${this.APIKey}&language=it-it`);
+}
+
+
 createFavorite(movie: FavoriteMovies){
   return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
 }
 
-getFavoriteByUserId(userId: number){
-  return this.httpClient.get<FavoriteMovies>(`${this.nodeBaseUrl}/favorite/:${userId}`);
+getFavoriteByUserId(userId: number | undefined){
+  return this.httpClient.get<FavoriteMovies[]>(`${this.nodeBaseUrl}/favorite/${userId}`);
 }
 
 }

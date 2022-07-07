@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie';
+import { FavoriteMovies, Movie } from 'src/app/models/movie';
 import { Input } from '@angular/core';
 
 @Component({
@@ -10,7 +10,10 @@ import { Input } from '@angular/core';
 export class FavoriteMoviesItemComponent implements OnInit {
 
   @Input() movie: Partial<Movie> = {};
-   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
+  @Input() movieUserIdList: Partial<FavoriteMovies> [] = [];
+  @Input() movieList: Partial<Movie>[] = [];
+
+  imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 
   constructor() { }
 

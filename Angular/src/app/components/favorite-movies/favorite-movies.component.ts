@@ -13,7 +13,8 @@ import { getCurrencySymbol } from '@angular/common';
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-  @Input() favoriteMovie: Partial<FavoriteMovies> [] = [];
+  @Input() movieUserIdList: Partial<FavoriteMovies> [] = [];
+  @Input() movieList: Partial<Movie>[] = [];
 
   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 

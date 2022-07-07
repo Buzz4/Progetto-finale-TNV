@@ -19,8 +19,13 @@
       <br>
       <h2>Lista dei preferiti</h2>
       <div class="favorite-list-body">
-        <tnv-favorite-movies>
-        </tnv-favorite-movies>
+        <div class="row">
+          <tnv-favorite-movies-item 
+              *ngFor="let movie of movieList"
+              [movieList]="movieList"
+              class="col-12 col-sm-6 col-md-3 py-2"
+          ></tnv-favorite-movies-item>
+      </div>
       </div>
     </div>
   </div>
