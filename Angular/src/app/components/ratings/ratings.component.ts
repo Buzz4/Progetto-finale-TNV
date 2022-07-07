@@ -5,7 +5,6 @@ import { RatingService } from 'src/app/@core/services/rating.service';
 import { Movie } from 'src/app/models/movie';
 import { User } from 'src/app/models/user';
 import { Rating } from 'src/app/models/rating';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'tnv-ratings',
@@ -20,7 +19,7 @@ export class RatingsComponent implements OnInit {
   currentUser: Partial<User> = {};
   currentRate = 0;
 
-  constructor(private ratingService: RatingService, private authService: AuthService, public activeModal: NgbActiveModal) { }
+  constructor(private ratingService: RatingService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUser();
