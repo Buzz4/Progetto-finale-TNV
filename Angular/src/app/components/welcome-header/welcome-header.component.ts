@@ -12,7 +12,7 @@ export class WelcomeHeaderComponent implements OnInit {
   @Input() title: string = '';
   @Input() description: string = '';
 
-  images = ['../../assets/images/header-img/inception.jpg', '../../assets/images/header-img/interstellar.jpg', '../../assets/images/header-img/tenet.jpg']
+  images = ['../../assets/images/header-img/inception.jpg', '../../assets/images/header-img/interstellar.jpg', '../../assets/images/header-img/tenet.jpg', '../../assets/images/header-img/memento.jpg']
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
