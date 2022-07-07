@@ -2,8 +2,25 @@
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
 </header> -->
+<ngb-carousel #carousel [interval]="2500" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <div class="carousel">
+            <div class="carousel-caption">
+                <h1>{{ title }}</h1>
+                <p>{{ description }}</p>
+            </div>
+            <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+                <div class="movie-img">
+                    <img [src]="img" alt="My image {{i + 1}} description">
+                </div>
+            </a>
+        </div>    
+    </ng-template>
+</ngb-carousel>
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="http://seiemmezzo.it/wp-content/uploads/2020/08/2776321.jpg" alt="">
@@ -24,4 +41,4 @@
                 src="https://s2.best-wallpaper.net/wallpaper/1920x1200/1106/Inception-2010_1920x1200.jpg" alt="">
         </div>
     </div>
-</div>
+</div> -->

@@ -14,6 +14,13 @@
 /* .d-block{
     opacity: 80%;
 } */
+
+.carousel img{
+   width: 100%;
+   height: auto;
+   
+}
+ 
 .carousel-caption h1 {
     color: rgb(255, 255, 255);
     font-size: 128px;
@@ -21,7 +28,6 @@
     font-family: 'Staatliches', cursive;
     text-shadow: 2px 2px 4px black;
 }
-
 
 .carousel-caption p {
     color: white;
@@ -31,15 +37,7 @@
     text-shadow: 2px 2px 4px black;
 }
 
-/* .carousel-item{
-    height: 100vh;
-    min-height: 300px;
-    background: no-repeat scroll center scroll;
-    background-size: cover;
-}
- */
-
- .carousel-item::before{
+.carousel::before{
     content: "";
     display: block;
     position: absolute;
@@ -47,6 +45,16 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: #032CA6;
+    background: #000000;
     opacity: 0.3;
- }
+}
+/* .container {
+    width: 200px;
+    height: 120px;
+}
+
+ Resize images 
+.container img {
+    width: 100%;
+    height: auto;
+} */

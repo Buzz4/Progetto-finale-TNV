@@ -14,7 +14,7 @@ import { User } from 'src/app/models/user';
 
 export class ReviewComponent implements OnInit {
 
-  constructor(private reviewService: ReviewService, private authService: AuthService, public activeModal: NgbActiveModal) { }
+  constructor(private reviewService: ReviewService, private authService: AuthService, public activeModal: NgbActiveModal, private modalService: NgbModal) { }
 
   @Input() movie: Partial<Movie> = {};
   currentUser: Partial<User> = {};
@@ -30,4 +30,6 @@ export class ReviewComponent implements OnInit {
       },
     });
   }
+
+  
 }
