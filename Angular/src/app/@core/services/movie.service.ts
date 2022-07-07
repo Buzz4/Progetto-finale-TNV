@@ -42,6 +42,26 @@ export class MovieService {
       });
 }
 
+getRandomCriterion(){
+  const latestCriterion = 4;
+  const randomCriterion = Math.round(Math.random() * latestCriterion);
+
+  switch(randomCriterion){
+    case 0:
+      return "all'anno di uscita";
+    case 1:
+      return "alla media voto data dagli utenti";
+    case 2:
+      return "alla durata";
+    case 3:
+      return "al budget";
+    case 4:
+      return "agli incassi";
+    default:
+      return "a qualcosa, perdonami ma la funzione che mi genera ha funzionato male";
+  }
+}
+
 getMovie(movieId: number | undefined) {
   return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movieId}?${this.APIKey}&language=it-it`);
 }
