@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/@core/services/auth.service';
 import { ReviewService } from 'src/app/@core/services/review.service';
 import { Movie } from 'src/app/models/movie';
@@ -13,7 +14,7 @@ import { User } from 'src/app/models/user';
 
 export class ReviewComponent implements OnInit {
 
-  constructor(private reviewService: ReviewService, private authService: AuthService) { }
+  constructor(private reviewService: ReviewService, private authService: AuthService, public activeModal: NgbActiveModal) { }
 
   @Input() movie: Partial<Movie> = {};
   currentUser: Partial<User> = {};

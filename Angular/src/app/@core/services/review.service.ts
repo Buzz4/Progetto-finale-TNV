@@ -12,6 +12,7 @@ export class ReviewService {
   constructor(private httpClient: HttpClient) { }
 
   addReview(review: Review){
+    console.log(review);
     return this.httpClient.post<Review>("https://localhost:7024/api/review", review); 
   }
 }

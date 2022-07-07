@@ -11,13 +11,11 @@
           <h5 class="card-title">{{ movie.title | titlecase }}</h5>
           <p class="card-text">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-            <button type="submit" *ngIf="onSubmit"class="form-label btn btn-primary rounded submit px-3 mt-2">
-              Aggiungi ai preferiti
-            </button>
+            <button type="submit" *ngIf="onSubmit" class="form-label btn btn-primary rounded submit px-3 mt-2" (click)="open()">Aggiungi ai preferiti</button>
           </form>
           <p class="card-text">
-            <tnv-review></tnv-review>
-            <tnv-ratings></tnv-ratings>
+            <!--<tnv-review [movie]="movie"></tnv-review>
+            <tnv-ratings [movie]="movie"></tnv-ratings>-->
           </p>
         </div>
       </div>

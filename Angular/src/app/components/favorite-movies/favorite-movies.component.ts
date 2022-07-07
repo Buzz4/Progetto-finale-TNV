@@ -43,4 +43,9 @@ export class FavoriteMoviesComponent implements OnInit {
         }
       });
     }
+
+    onMovieDeleted(movieId : string | undefined){
+      movieId = this.movie.id?.toString();
+      this.movieList = this.movieList.filter(x => x.id !== movieId);
+    }
 }
