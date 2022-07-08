@@ -23,7 +23,7 @@ export interface Movie {
   title: string;
   video: boolean;
   vote_average: number;
-  vote_count: number
+  vote_count: number;
 }
   
   export interface Genre {
@@ -50,7 +50,6 @@ export interface Movie {
 }
 
 export interface MovieGame {
-  id: number;
   release_date: string;
   vote_average: number;
   runtime: number;
@@ -60,5 +59,10 @@ export interface MovieGame {
 
 export interface FavoriteMovies {
   userId?: number | undefined,
-  movieId: number | undefined,
+  movieId: number | undefined;
+}
+
+export interface Criterion {
+  label: string,
+  key: string;
 }
