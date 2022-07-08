@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
-import { FavoriteMovies, Movie } from 'src/app/models/movie';
+import { Criterion, FavoriteMovies, Movie } from 'src/app/models/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class MovieService {
   APIKey : string = "api_key=0f19618cdb7bc8cd3529c739a1455e1a"
 
   movies: Partial<Movie>[] = [];
+  criterion: Criterion = {} as Criterion;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -40,42 +41,49 @@ export class MovieService {
           this.getRandomMovie(index);
         },
       });
-}
+  }
 
-getRandomCriterion(){
-  const latestCriterion = 4;
-  const randomCriterion = Math.round(Math.random() * latestCriterion);
+  getRandomCriterion(){
+    const latestCriterion = 4;
+    const coin = Math.round(Math.random() * latestCriterion);
+  
+    switch(coin){
+      case 0:
+        this.criterion = {label: "all' anno di uscita", key: `release_date`};
+        break;
+      case 1:
+        this.criterion = {label: "alla media voto data dagli utenti", key: 'vote_average'};
+        break;
+      case 2:
+        this.criterion = {label: "alla durata", key: 'runtime'};
+        break;
+      case 3:
+        this.criterion = {label: "al budget", key: 'budget'};
+        break;
+      case 4:
+        this.criterion = {label: "agli incassi", key: 'revenue'};
+        break;
+    }
 
-  switch(randomCriterion){
-    case 0:
-      return "all'anno di uscita";
-    case 1:
-      return "alla media voto data dagli utenti";
-    case 2:
-      return "alla durata";
-    case 3:
-      return "al budget";
-    case 4:
-      return "agli incassi";
-    default:
-      return "a qualcosa, perdonami ma la funzione che mi genera ha funzionato male";
+    return this.criterion;
+  }
+
+  getMovie(movieId: number | undefined) {
+    return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movieId}?${this.APIKey}&language=it-it`);
+  }
+  
+  getFavoriteByUserId(userId: number | undefined){
+    return this.httpClient.get<FavoriteMovies[]>(`${this.nodeBaseUrl}/favorite/${userId}`);
+  }
+  
+  createFavorite(movie: FavoriteMovies){
+    return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
+  }
+  
+  deleteFavorite(userId: number | undefined, movieId: number | undefined){
+    return this.httpClient.delete<FavoriteMovies>(`${this.nodeBaseUrl}/favorite/${userId}/${movieId}`); 
   }
 }
+      
 
-getMovie(movieId: number | undefined) {
-  return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movieId}?${this.APIKey}&language=it-it`);
-}
 
-getFavoriteByUserId(userId: number | undefined){
-  return this.httpClient.get<FavoriteMovies[]>(`${this.nodeBaseUrl}/favorite/${userId}`);
-}
-
-createFavorite(movie: FavoriteMovies){
-  return this.httpClient.post<FavoriteMovies>(`${this.nodeBaseUrl}/favorite`, movie); 
-}
-
-deleteFavorite(userId: number | undefined, movieId: number | undefined){
-  return this.httpClient.delete<FavoriteMovies>(`${this.nodeBaseUrl}/favorite/${userId}/${movieId}`); 
-}
-
-}
