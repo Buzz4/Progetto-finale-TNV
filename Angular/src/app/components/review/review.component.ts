@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { AuthService } from 'src/app/@core/services/auth.service';
 import { ReviewService } from 'src/app/@core/services/review.service';
 import { Movie } from 'src/app/models/movie';
+import { Review } from 'src/app/models/review';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -26,7 +27,8 @@ export class ReviewComponent implements OnInit {
   onSubmit(form: NgForm) {
     form.control.markAllAsTouched()
     if(form.valid){
-      this.reviewService.addReview({userId: this.currentUser.id, movieId: this.movie.id, recensione: JSON.stringify(form.value)}).subscribe({
+      form.value['recensione'] = this.currentRecensione;
+      this.reviewService.addReview({userId: this.currentUser.id, movieId: this.movie.id, recensione: this.currentRecensione}).subscribe({
       next: (res) => {
         console.log(res)
       },
