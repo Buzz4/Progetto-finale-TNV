@@ -17,16 +17,24 @@ export class ReviewComponent implements OnInit {
 
   @Input() movie: Partial<Movie> = {};
   currentUser: Partial<User> = {};
+  currentRecensione = "";
 
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUser();
   }
   
   onSubmit(form: NgForm) {
-    this.reviewService.addReview({userId: this.currentUser.id, movieId : this.movie.id, recensione: JSON.stringify(form.value)}).subscribe({
+    form.control.markAllAsTouched()
+    if(form.valid){
+      this.reviewService.addReview({userId: this.currentUser.id, movieId: this.movie.id, recensione: JSON.stringify(form.value)}).subscribe({
       next: (res) => {
         console.log(res)
       },
     });
   }
+}
+
+toStringa(form: NgForm) : string{
+  return String = form.value;
+}
 }

@@ -20,7 +20,7 @@ namespace ReviewApp.EF.Entity
         [Column("movieId"), Required]
         public int movieId { get; set; }
 
-        [Column("recensione"), Required, StringLength(500), DataType(DataType.Text)]
+        [Column("recensione"), Required, StringLength(160), DataType(DataType.Text)]
         public string recensione { get; set; }
     }
 }

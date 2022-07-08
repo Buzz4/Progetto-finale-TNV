@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FavoriteMovies, Movie } from 'src/app/models/movie';
 import { Input } from '@angular/core';
 import { MovieService } from 'src/app/@core/services/movie.service';
@@ -16,6 +16,7 @@ export class FavoriteMoviesItemComponent implements OnInit {
   @Input() movieUserIdList: Partial<FavoriteMovies> [] = [];
   @Input() movieList: Partial<Movie>[] = [];
   @Input() movie: Partial<Movie> = {};
+
 
   imageBaseUrl: string = "https://image.tmdb.org/t/p/w440_and_h660_face"
 

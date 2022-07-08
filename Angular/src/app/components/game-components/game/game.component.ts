@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/@core/services/movie.service';
 import { Criterion, Movie } from 'src/app/models/movie';
 
